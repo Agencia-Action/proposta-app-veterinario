@@ -1,0 +1,626 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Proposta de Marketing Digital | App Veterinário</title>
+<meta name="description" content="Proposta comercial de marketing digital para lançamento de aplicativo veterinário.">
+<style>
+/* ============ RESET & BASE ============ */
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --bg-deep:#0d0418;
+  --bg-dark:#150826;
+  --purple-900:#2a0a4a;
+  --purple-700:#4c1d95;
+  --purple-500:#7c3aed;
+  --purple-400:#a78bfa;
+  --lilac:#c4b5fd;
+  --white:#ffffff;
+  --text-dim:rgba(255,255,255,.62);
+  --glass:rgba(255,255,255,.05);
+  --glass-border:rgba(255,255,255,.12);
+  --glow:0 0 40px rgba(124,58,237,.45);
+  --radius:20px;
+  --font:'Inter','Segoe UI',system-ui,-apple-system,sans-serif;
+}
+html{scroll-behavior:smooth}
+html,body,a,button,.faq-q,.faq-item,.plan,.glass,.btn-primary,.btn-ghost,.btn-whats,.nav-cta,.plan-btn{
+  cursor:url('img/paw-cursor.png') 15 21, auto}
+body{
+  font-family:var(--font);
+  background:var(--bg-deep);
+  color:var(--white);
+  overflow-x:hidden;
+  line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+section{position:relative;padding:110px 6vw;max-width:1280px;margin:0 auto}
+h1,h2,h3{font-weight:800;letter-spacing:-.02em;line-height:1.1}
+
+/* ============ BACKGROUND FX ============ */
+.bg-fx{position:fixed;inset:0;z-index:-2;background:
+  radial-gradient(1200px 800px at 80% -10%, rgba(124,58,237,.35), transparent 60%),
+  radial-gradient(900px 700px at -10% 40%, rgba(76,29,149,.4), transparent 60%),
+  radial-gradient(800px 600px at 50% 110%, rgba(167,139,250,.18), transparent 60%),
+  linear-gradient(180deg,var(--bg-dark) 0%,var(--bg-deep) 100%);}
+.grain{position:fixed;inset:0;z-index:-1;opacity:.5;pointer-events:none;
+  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3CfeComponentTransfer%3E%3CfeFuncA type='linear' slope='0.05'/%3E%3C/feComponentTransfer%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");}
+#particles{position:fixed;inset:0;z-index:-1;pointer-events:none}
+
+/* ============ NAV ============ */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:16px 5vw;
+  background:rgba(13,4,24,.55);
+  backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);
+  border-bottom:1px solid rgba(255,255,255,.07);
+  transition:background .3s}
+nav.scrolled{background:rgba(13,4,24,.85)}
+.logo{display:flex;align-items:center;gap:10px;font-weight:800;font-size:1.05rem;letter-spacing:.04em}
+.logo svg{filter:drop-shadow(0 0 8px rgba(167,139,250,.8))}
+.nav-links{display:flex;gap:30px;font-size:.85rem;color:var(--text-dim)}
+.nav-links a{transition:color .25s;position:relative}
+.nav-links a::after{content:'';position:absolute;left:0;bottom:-5px;width:0;height:2px;border-radius:2px;
+  background:linear-gradient(90deg,var(--purple-500),var(--lilac));transition:width .3s}
+.nav-links a:hover{color:var(--white)}
+.nav-links a:hover::after{width:100%}
+.nav-cta{font-size:.82rem;font-weight:700;padding:10px 22px;border-radius:99px;
+  background:linear-gradient(135deg,var(--purple-500),var(--purple-700));
+  box-shadow:0 0 20px rgba(124,58,237,.5);transition:transform .25s,box-shadow .25s}
+.nav-cta:hover{transform:translateY(-2px);box-shadow:0 0 35px rgba(124,58,237,.8)}
+@media(max-width:820px){.nav-links{display:none}}
+
+/* ============ GLASS CARD (estilo referência) ============ */
+.glass{
+  position:relative;
+  background:
+    radial-gradient(120% 160% at 0% 100%, rgba(167,139,250,.32) 0%, rgba(124,58,237,.14) 35%, rgba(255,255,255,.03) 70%);
+  border:1px solid var(--glass-border);
+  border-radius:var(--radius);
+  backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);
+  overflow:hidden;
+  transition:transform .35s cubic-bezier(.2,.8,.2,1),box-shadow .35s,border-color .35s;
+}
+.glass::before{content:'';position:absolute;inset:0;border-radius:inherit;pointer-events:none;
+  background:linear-gradient(120deg,rgba(255,255,255,.14),transparent 40%);}
+.glass:hover{transform:translateY(-8px) scale(1.015);border-color:rgba(196,181,253,.45);
+  box-shadow:0 20px 60px rgba(0,0,0,.5),var(--glow)}
+
+/* ============ HERO ============ */
+.hero{min-height:100vh;display:grid;grid-template-columns:1.15fr .85fr;align-items:center;gap:50px;padding-top:140px}
+.hero-tag{display:inline-flex;align-items:center;gap:8px;font-size:.75rem;font-weight:600;letter-spacing:.14em;text-transform:uppercase;
+  padding:8px 18px;border-radius:99px;border:1px solid var(--glass-border);
+  background:var(--glass);color:var(--lilac);margin-bottom:26px;backdrop-filter:blur(10px)}
+.hero-tag .dot{width:7px;height:7px;border-radius:50%;background:var(--purple-400);box-shadow:0 0 10px var(--purple-400);animation:pulse 2s infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.35}}
+.hero h1{font-size:clamp(2.3rem,5.2vw,4.2rem);margin-bottom:24px}
+.hero h1 .grad{background:linear-gradient(95deg,var(--lilac) 0%,var(--purple-400) 50%,#8b5cf6 100%);
+  -webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;
+  filter:drop-shadow(0 0 26px rgba(139,92,246,.45))}
+.hero p{font-size:clamp(1rem,1.4vw,1.15rem);color:var(--text-dim);max-width:540px;margin-bottom:38px}
+.hero-ctas{display:flex;gap:18px;flex-wrap:wrap;align-items:center}
+.btn-primary{position:relative;display:inline-flex;align-items:center;gap:10px;font-weight:700;font-size:1rem;
+  padding:17px 38px;border-radius:99px;border:none;cursor:pointer;color:#fff;
+  background:linear-gradient(135deg,#8b5cf6,#6d28d9);
+  box-shadow:0 0 30px rgba(124,58,237,.55),inset 0 1px 0 rgba(255,255,255,.25);
+  transition:transform .25s,box-shadow .25s;overflow:hidden}
+.btn-primary::after{content:'';position:absolute;top:0;left:-80%;width:50%;height:100%;
+  background:linear-gradient(100deg,transparent,rgba(255,255,255,.35),transparent);
+  transform:skewX(-20deg);transition:left .6s}
+.btn-primary:hover{transform:translateY(-3px) scale(1.03);box-shadow:0 0 50px rgba(139,92,246,.85)}
+.btn-primary:hover::after{left:130%}
+.btn-primary:active{transform:scale(.97)}
+.btn-ghost{font-weight:600;font-size:.95rem;padding:16px 30px;border-radius:99px;
+  border:1px solid var(--glass-border);background:var(--glass);backdrop-filter:blur(10px);
+  transition:border-color .25s,background .25s}
+.btn-ghost:hover{border-color:var(--purple-400);background:rgba(124,58,237,.15)}
+.hero-visual{position:relative}
+.hero-img-wrap{position:relative;border-radius:28px;overflow:hidden;
+  border:1px solid var(--glass-border);
+  box-shadow:0 30px 80px rgba(0,0,0,.6),0 0 60px rgba(124,58,237,.3);
+  transform:rotate(2deg);transition:transform .5s}
+.hero-img-wrap:hover{transform:rotate(0deg) scale(1.02)}
+.hero-img-wrap::after{content:'';position:absolute;inset:0;
+  background:linear-gradient(200deg,rgba(124,58,237,.05) 30%,rgba(76,29,149,.55) 100%);mix-blend-mode:multiply}
+.hero-img-wrap img{width:100%;height:480px;object-fit:cover}
+.img-fallback{display:none;width:100%;height:480px;align-items:center;justify-content:center;
+  background:radial-gradient(circle at 50% 40%,rgba(167,139,250,.4),rgba(42,10,74,.9))}
+.img-fallback svg{width:110px;height:110px;opacity:.85;filter:drop-shadow(0 0 20px rgba(196,181,253,.8))}
+.float-chip{position:absolute;display:flex;align-items:center;gap:10px;padding:13px 18px;border-radius:16px;
+  background:rgba(21,8,38,.72);border:1px solid var(--glass-border);backdrop-filter:blur(14px);
+  font-size:.8rem;font-weight:600;box-shadow:0 12px 40px rgba(0,0,0,.5);animation:float 5s ease-in-out infinite}
+.float-chip .num{font-size:1.15rem;font-weight:800;color:var(--lilac)}
+.chip-1{top:6%;left:-9%;animation-delay:.4s}
+.chip-2{bottom:9%;right:-7%;animation-delay:1.6s}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-13px)}}
+@media(max-width:920px){
+  .hero{grid-template-columns:1fr;padding-top:120px;min-height:auto}
+  .hero-img-wrap img,.img-fallback{height:340px}
+  .chip-1{left:2%}.chip-2{right:2%}
+}
+
+/* ============ SECTION HEADERS ============ */
+.sec-head{margin-bottom:60px}
+.sec-head .kicker{font-size:.75rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--purple-400);margin-bottom:14px;display:block}
+.sec-head h2{font-size:clamp(1.9rem,3.8vw,3rem)}
+.sec-head p{color:var(--text-dim);max-width:560px;margin-top:16px}
+
+/* ============ INCLUSO / SERVIÇOS ============ */
+.services-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:26px}
+.service-card{padding:36px}
+.service-card .icon-box{width:58px;height:58px;border-radius:16px;display:flex;align-items:center;justify-content:center;
+  background:linear-gradient(135deg,rgba(139,92,246,.35),rgba(124,58,237,.1));
+  border:1px solid rgba(196,181,253,.3);margin-bottom:22px;
+  box-shadow:0 0 24px rgba(124,58,237,.35);transition:transform .35s}
+.service-card:hover .icon-box{transform:scale(1.12) rotate(-6deg)}
+.service-card .num{position:absolute;top:26px;right:30px;font-size:.78rem;font-weight:700;color:rgba(196,181,253,.55);letter-spacing:.1em}
+.service-card h3{font-size:1.25rem;margin-bottom:12px}
+.service-card .what{color:var(--text-dim);font-size:.93rem;margin-bottom:16px}
+.service-card .why{font-size:.88rem;padding:14px 16px;border-radius:12px;
+  background:rgba(124,58,237,.13);border-left:3px solid var(--purple-400);color:var(--lilac)}
+.service-card .why strong{color:#fff}
+.notice{margin-top:34px;padding:24px 30px;display:flex;gap:16px;align-items:flex-start;
+  border-radius:var(--radius);
+  background:linear-gradient(110deg,rgba(139,92,246,.22),rgba(255,255,255,.04));
+  border:1px solid rgba(196,181,253,.35);backdrop-filter:blur(12px);
+  box-shadow:0 0 30px rgba(124,58,237,.2)}
+.notice svg{flex-shrink:0;margin-top:2px}
+.notice p{font-size:.92rem;color:#efeaff}
+.notice strong{color:#fff}
+.mini-img-row{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:46px}
+.mini-img{position:relative;border-radius:18px;overflow:hidden;border:1px solid var(--glass-border);height:170px;
+  transition:transform .35s,box-shadow .35s}
+.mini-img:hover{transform:translateY(-6px);box-shadow:var(--glow)}
+.mini-img img{width:100%;height:100%;object-fit:cover}
+.mini-img::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,transparent 40%,rgba(76,29,149,.75))}
+.mini-img .img-fallback{height:100%}
+.mini-img .img-fallback svg{width:54px;height:54px}
+@media(max-width:820px){.services-grid{grid-template-columns:1fr}.mini-img-row{grid-template-columns:1fr 1fr}.mini-img:last-child{display:none}}
+
+/* ============ PACOTES ============ */
+.plans-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:26px;align-items:stretch}
+.plan{padding:38px 32px;display:flex;flex-direction:column;cursor:pointer}
+.plan .plan-name{font-size:.8rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--purple-400);margin-bottom:10px}
+.plan .price{font-size:2.3rem;font-weight:800;margin-bottom:4px;line-height:1.15}
+.plan .price span{display:block;font-size:.88rem;font-weight:600;color:var(--lilac);margin-top:6px;letter-spacing:.02em}
+.plan .tagline{font-size:.85rem;color:var(--text-dim);margin-bottom:26px}
+.plan ul{list-style:none;flex:1;display:flex;flex-direction:column;gap:13px;margin-bottom:30px}
+.plan li{display:flex;gap:11px;font-size:.9rem;align-items:flex-start}
+.plan li svg{flex-shrink:0;margin-top:3px}
+.plan li.no{color:rgba(255,255,255,.38);text-decoration:line-through}
+.plan .plan-btn{text-align:center;font-weight:700;font-size:.92rem;padding:15px;border-radius:14px;
+  border:1px solid rgba(196,181,253,.4);background:rgba(124,58,237,.14);
+  transition:background .25s,box-shadow .25s,transform .2s}
+.plan .plan-btn:hover{background:rgba(124,58,237,.35);box-shadow:0 0 26px rgba(124,58,237,.5);transform:translateY(-2px)}
+.plan.featured{
+  background:
+    radial-gradient(130% 170% at 10% 100%, rgba(167,139,250,.5) 0%, rgba(124,58,237,.25) 40%, rgba(255,255,255,.04) 75%);
+  border:1px solid rgba(196,181,253,.55);
+  box-shadow:0 0 50px rgba(124,58,237,.45);
+  transform:scale(1.04);z-index:2;
+  animation:featGlow 3.2s ease-in-out infinite}
+@keyframes featGlow{0%,100%{box-shadow:0 0 40px rgba(124,58,237,.4)}50%{box-shadow:0 0 70px rgba(139,92,246,.75)}}
+.plan.featured:hover{transform:scale(1.06) translateY(-6px)}
+.plan.featured .plan-btn{background:linear-gradient(135deg,#8b5cf6,#6d28d9);border:none;
+  box-shadow:0 0 24px rgba(124,58,237,.6)}
+.plan.featured{padding-top:66px}
+.badge{position:absolute;top:18px;left:50%;transform:translateX(-50%);white-space:nowrap;font-size:.68rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;
+  padding:7px 15px;border-radius:99px;color:#fff;
+  background:linear-gradient(135deg,#a78bfa,#7c3aed);
+  box-shadow:0 0 18px rgba(167,139,250,.8)}
+.media-note{margin-top:34px;text-align:center;font-size:.85rem;color:var(--text-dim);
+  padding:18px 26px;border-radius:14px;border:1px dashed rgba(196,181,253,.3);background:rgba(255,255,255,.03)}
+.media-note strong{color:var(--lilac)}
+.plans-pets{display:flex;justify-content:center;gap:-10px;margin-bottom:42px}
+.pet-avatar{width:74px;height:74px;border-radius:50%;overflow:hidden;border:2px solid rgba(196,181,253,.6);
+  box-shadow:0 0 22px rgba(124,58,237,.5);margin:0 -10px;position:relative;background:var(--purple-900);
+  transition:transform .3s;z-index:1}
+.pet-avatar:hover{transform:scale(1.18) translateY(-6px);z-index:3}
+.pet-avatar img{width:100%;height:100%;object-fit:cover}
+.pet-avatar .img-fallback{height:100%;border-radius:50%}
+.pet-avatar .img-fallback svg{width:32px;height:32px}
+@media(max-width:920px){.plans-grid{grid-template-columns:1fr;max-width:460px;margin:0 auto}.plan.featured{transform:scale(1)}.plan.featured:hover{transform:translateY(-8px)}}
+
+/* ============ TRÁFEGO PAGO ============ */
+.traffic{display:grid;grid-template-columns:1fr 1fr;gap:54px;align-items:center}
+.traffic-copy h2{font-size:clamp(1.8rem,3.4vw,2.7rem);margin-bottom:20px}
+.traffic-copy p{color:var(--text-dim);margin-bottom:18px}
+.traffic-copy .hl{color:var(--lilac);font-weight:600}
+.stats-grid{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+.stat-card{padding:30px 26px;text-align:left}
+.stat-card .stat-num{font-size:clamp(2.2rem,4vw,3rem);font-weight:800;
+  background:linear-gradient(120deg,#fff,var(--lilac));
+  -webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;
+  filter:drop-shadow(0 0 18px rgba(167,139,250,.5))}
+.stat-card .stat-label{font-size:.85rem;color:var(--text-dim);margin-top:8px}
+.traffic-img{position:relative;border-radius:24px;overflow:hidden;border:1px solid var(--glass-border);
+  margin-top:30px;box-shadow:0 18px 50px rgba(0,0,0,.5)}
+.traffic-img img{width:100%;height:auto}
+.traffic-img::after{content:'';position:absolute;inset:0;background:linear-gradient(120deg,rgba(124,58,237,.35),transparent 60%)}
+.traffic-img .img-fallback{height:auto;min-height:220px}
+@media(max-width:920px){.traffic{grid-template-columns:1fr}}
+
+/* ============ FAQ ============ */
+.faq-list{display:flex;flex-direction:column;gap:16px;max-width:860px}
+.faq-item{border-radius:18px;overflow:hidden;cursor:pointer}
+.faq-q{display:flex;justify-content:space-between;align-items:center;gap:20px;padding:24px 28px;font-weight:600;font-size:.98rem}
+.faq-q .plus{flex-shrink:0;width:34px;height:34px;border-radius:50%;display:flex;align-items:center;justify-content:center;
+  border:1px solid rgba(196,181,253,.4);color:var(--lilac);font-size:1.3rem;font-weight:400;
+  transition:transform .35s,background .35s}
+.faq-item.open .plus{transform:rotate(45deg);background:rgba(124,58,237,.35)}
+.faq-a{max-height:0;overflow:hidden;transition:max-height .45s cubic-bezier(.2,.8,.2,1),padding .35s;
+  padding:0 28px;color:var(--text-dim);font-size:.9rem}
+.faq-item.open .faq-a{max-height:300px;padding:0 28px 26px}
+
+/* ============ CTA FINAL ============ */
+.final-cta{text-align:center}
+.final-box{padding:74px 8vw;border-radius:30px;position:relative;overflow:hidden;
+  background:
+    radial-gradient(140% 200% at 50% 120%, rgba(139,92,246,.55) 0%, rgba(76,29,149,.3) 45%, rgba(255,255,255,.03) 80%);
+  border:1px solid rgba(196,181,253,.4);
+  box-shadow:0 0 80px rgba(124,58,237,.35)}
+.final-box h2{font-size:clamp(2rem,4.4vw,3.4rem);margin-bottom:20px}
+.final-box p{color:rgba(255,255,255,.78);max-width:560px;margin:0 auto 40px}
+.btn-whats{display:inline-flex;align-items:center;gap:12px;font-weight:800;font-size:1.08rem;
+  padding:20px 46px;border-radius:99px;color:#fff;position:relative;overflow:hidden;
+  background:linear-gradient(135deg,#25d366,#128c7e);
+  box-shadow:0 0 40px rgba(37,211,102,.5),inset 0 1px 0 rgba(255,255,255,.3);
+  transition:transform .25s,box-shadow .25s}
+.btn-whats:hover{transform:translateY(-4px) scale(1.04);box-shadow:0 0 60px rgba(37,211,102,.8)}
+.btn-whats:active{transform:scale(.97)}
+footer{text-align:center;padding:40px 6vw 50px;color:rgba(255,255,255,.4);font-size:.8rem;border-top:1px solid rgba(255,255,255,.06)}
+
+/* ============ REVEAL ANIMATIONS ============ */
+.reveal{opacity:0;transform:translateY(46px);transition:opacity .8s ease,transform .8s cubic-bezier(.2,.8,.2,1)}
+.reveal.left{transform:translateX(-56px)}
+.reveal.right{transform:translateX(56px)}
+.reveal.visible{opacity:1;transform:translate(0,0)}
+@media(prefers-reduced-motion:reduce){
+  .reveal{opacity:1;transform:none;transition:none}
+  *{animation:none!important}
+}
+</style>
+</head>
+<body>
+
+<div class="bg-fx"></div>
+<div class="grain"></div>
+<canvas id="particles"></canvas>
+
+<!-- ============ NAV ============ -->
+<nav id="nav">
+  <a href="#hero" class="logo">
+    <svg width="26" height="26" viewBox="0 0 24 24" fill="none"><path d="M12 21c-3.5 0-6-2-6-4.5 0-2 1.8-3.5 6-3.5s6 1.5 6 3.5C18 19 15.5 21 12 21Z" fill="#a78bfa"/><circle cx="7" cy="9.5" r="2" fill="#c4b5fd"/><circle cx="17" cy="9.5" r="2" fill="#c4b5fd"/><circle cx="10" cy="6" r="2" fill="#8b5cf6"/><circle cx="14" cy="6" r="2" fill="#8b5cf6"/></svg>
+    PROPOSTA <span style="color:var(--purple-400)">DE MARKETING</span>
+  </a>
+  <div class="nav-links">
+    <a href="#hero">Início</a>
+    <a href="#incluso">O que está incluso</a>
+    <a href="#pacotes">Pacotes</a>
+    <a href="#trafego">Tráfego Pago</a>
+    <a href="#faq">FAQ</a>
+  </div>
+  <a href="#cta-final" class="nav-cta">Quero esse plano</a>
+</nav>
+
+<!-- ============ 1. HERO ============ -->
+<section class="hero" id="hero">
+  <div class="reveal left">
+    <span class="hero-tag"><span class="dot"></span>Proposta Comercial · Marketing Digital</span>
+    <h1>Lance seu app veterinário com uma <span class="grad">estratégia completa</span> de marketing digital</h1>
+    <p>Presença digital profissional, autoridade no mercado pet e campanhas focadas em gerar downloads. Tudo o que seu aplicativo precisa para nascer forte, do Instagram aos anúncios.</p>
+    <div class="hero-ctas">
+      <a href="#pacotes" class="btn-primary">
+        Quero esse plano
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M5 12h14m-6-6 6 6-6 6" stroke="#fff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+      <a href="#incluso" class="btn-ghost">Ver entregas</a>
+    </div>
+  </div>
+  <div class="hero-visual reveal right">
+    <div class="hero-img-wrap">
+      <img src="https://images.unsplash.com/photo-1583511655857-d19b40a7a54e?w=900&q=80&auto=format&fit=crop" alt="Cachorro filhote feliz" onerror="imgFail(this)">
+      <div class="img-fallback"><svg viewBox="0 0 24 24" fill="none"><path d="M12 21c-3.5 0-6-2-6-4.5 0-2 1.8-3.5 6-3.5s6 1.5 6 3.5C18 19 15.5 21 12 21Z" fill="#c4b5fd"/><circle cx="7" cy="9.5" r="2" fill="#fff"/><circle cx="17" cy="9.5" r="2" fill="#fff"/><circle cx="10" cy="6" r="2" fill="#a78bfa"/><circle cx="14" cy="6" r="2" fill="#a78bfa"/></svg></div>
+    </div>
+    <div class="float-chip chip-1">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><rect x="6" y="2" width="12" height="20" rx="3" stroke="#c4b5fd" stroke-width="1.8"/><circle cx="12" cy="18.5" r="1" fill="#c4b5fd"/></svg>
+      <div><span class="num" data-count="100" data-suffix="%">0%</span><br>foco em downloads</div>
+    </div>
+    <div class="float-chip chip-2">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M12 20s-7-4.3-7-9.5C5 7.5 7 6 9 6c1.3 0 2.4.6 3 1.6C12.6 6.6 13.7 6 15 6c2 0 4 1.5 4 4.5C19 15.7 12 20 12 20Z" fill="#a78bfa"/></svg>
+      <div><span class="num" data-count="70" data-suffix="%">0%</span><br>dos tutores pesquisam online</div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 2. O QUE ESTÁ INCLUSO ============ -->
+<section id="incluso">
+  <div class="sec-head reveal">
+    <span class="kicker">Entregas</span>
+    <h2>O que está incluso</h2>
+    <p>Cada entrega foi pensada para construir presença, gerar confiança e converter tutores de pets em usuários do app.</p>
+  </div>
+
+  <div class="services-grid">
+    <div class="glass service-card reveal">
+      <span class="num">01</span>
+      <div class="icon-box"><svg width="28" height="28" viewBox="0 0 24 24" fill="none"><rect x="3" y="3" width="18" height="18" rx="5" stroke="#c4b5fd" stroke-width="1.8"/><circle cx="12" cy="12" r="4" stroke="#c4b5fd" stroke-width="1.8"/><circle cx="17.2" cy="6.8" r="1.3" fill="#c4b5fd"/></svg></div>
+      <h3>Criação de Instagram</h3>
+      <p class="what"><strong>O que é:</strong> construção do perfil do zero, com bio otimizada, destaques organizados e identidade visual aplicada ao feed.</p>
+      <p class="why"><strong>Por que importa:</strong> é a vitrine principal da marca, onde os tutores de pets pesquisam e criam confiança antes de baixar o app.</p>
+    </div>
+
+    <div class="glass service-card reveal">
+      <span class="num">02</span>
+      <div class="icon-box"><svg width="28" height="28" viewBox="0 0 24 24" fill="none"><path d="M12 21s-7-5.1-7-11a7 7 0 1 1 14 0c0 5.9-7 11-7 11Z" stroke="#c4b5fd" stroke-width="1.8"/><circle cx="12" cy="10" r="2.6" stroke="#c4b5fd" stroke-width="1.8"/></svg></div>
+      <h3>Google Meu Negócio (GMN)</h3>
+      <p class="what"><strong>O que é:</strong> cadastro e otimização completa do perfil do negócio no Google.</p>
+      <p class="why"><strong>Por que importa:</strong> garante presença nas buscas locais e no Google Maps, gerando credibilidade e tráfego gratuito todos os dias.</p>
+    </div>
+
+    <div class="glass service-card reveal">
+      <span class="num">03</span>
+      <div class="icon-box"><svg width="28" height="28" viewBox="0 0 24 24" fill="none"><rect x="2.5" y="4" width="19" height="14" rx="2.5" stroke="#c4b5fd" stroke-width="1.8"/><path d="M2.5 8.5h19M8 21h8" stroke="#c4b5fd" stroke-width="1.8" stroke-linecap="round"/><path d="M7 13l2.5 2.5L14 11" stroke="#a78bfa" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+      <h3>Landing Page profissional</h3>
+      <p class="what"><strong>O que é:</strong> página de conversão focada em downloads do app e captura de leads.</p>
+      <p class="why"><strong>Por que importa:</strong> é o destino dos anúncios. Cada elemento é estruturado para transformar visitante em usuário do app.</p>
+    </div>
+
+    <div class="glass service-card reveal">
+      <span class="num">04</span>
+      <div class="icon-box"><svg width="28" height="28" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9.5" stroke="#c4b5fd" stroke-width="1.8"/><path d="M15.5 8.2h-2c-.8 0-1.4.6-1.4 1.4v2h-2v2.5h2V20h2.6v-5.9h2l.4-2.5h-2.4V9.9c0-.3.2-.5.5-.5h1.9V8.2Z" fill="#c4b5fd" transform="translate(-1.2 -1.2) scale(1.05)"/></svg></div>
+      <h3>Página profissional no Meta</h3>
+      <p class="what"><strong>O que é:</strong> criação da estrutura oficial no Facebook, requisito para campanhas no Meta Ads.</p>
+      <p class="why"><strong>Por que importa:</strong> sem ela não é possível anunciar. Além disso, ela amplia a presença da marca em mais um canal.</p>
+    </div>
+  </div>
+
+  <div class="notice reveal">
+    <svg width="26" height="26" viewBox="0 0 24 24" fill="none"><path d="M12 9v4m0 4h.01M10.3 3.9 2.6 17.2A2 2 0 0 0 4.3 20.2h15.4a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0Z" stroke="#c4b5fd" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    <p><strong>Importante:</strong> todas as entregas seguem a identidade visual fornecida pelo cliente. <strong>Caso não exista identidade visual, consultar valor para criação.</strong></p>
+  </div>
+
+  <div class="mini-img-row reveal">
+    <div class="mini-img"><img src="img/cachorro1.jpeg" alt="Cachorro" onerror="imgFail(this)"><div class="img-fallback"><svg viewBox="0 0 24 24" fill="none"><path d="M12 21c-3.5 0-6-2-6-4.5 0-2 1.8-3.5 6-3.5s6 1.5 6 3.5C18 19 15.5 21 12 21Z" fill="#c4b5fd"/><circle cx="7" cy="9.5" r="2" fill="#fff"/><circle cx="17" cy="9.5" r="2" fill="#fff"/><circle cx="10" cy="6" r="2" fill="#a78bfa"/><circle cx="14" cy="6" r="2" fill="#a78bfa"/></svg></div></div>
+    <div class="mini-img"><img src="img/cachorro2.jpeg" alt="Cachorro" onerror="imgFail(this)"><div class="img-fallback"><svg viewBox="0 0 24 24" fill="none"><path d="M12 21c-3.5 0-6-2-6-4.5 0-2 1.8-3.5 6-3.5s6 1.5 6 3.5C18 19 15.5 21 12 21Z" fill="#c4b5fd"/><circle cx="7" cy="9.5" r="2" fill="#fff"/><circle cx="17" cy="9.5" r="2" fill="#fff"/><circle cx="10" cy="6" r="2" fill="#a78bfa"/><circle cx="14" cy="6" r="2" fill="#a78bfa"/></svg></div></div>
+    <div class="mini-img"><img src="img/cao-e-gato.jpeg" alt="Cão e gato" onerror="imgFail(this)"><div class="img-fallback"><svg viewBox="0 0 24 24" fill="none"><path d="M12 21c-3.5 0-6-2-6-4.5 0-2 1.8-3.5 6-3.5s6 1.5 6 3.5C18 19 15.5 21 12 21Z" fill="#c4b5fd"/><circle cx="7" cy="9.5" r="2" fill="#fff"/><circle cx="17" cy="9.5" r="2" fill="#fff"/><circle cx="10" cy="6" r="2" fill="#a78bfa"/><circle cx="14" cy="6" r="2" fill="#a78bfa"/></svg></div></div>
+  </div>
+</section>
+
+<!-- ============ 3. PACOTES ============ -->
+<section id="pacotes">
+  <div class="sec-head reveal" style="text-align:center;margin-left:auto;margin-right:auto">
+    <span class="kicker">Investimento</span>
+    <h2>Escolha o plano ideal</h2>
+    <p style="margin-left:auto;margin-right:auto">Três níveis de aceleração para o lançamento do seu app. Em todos os planos, as campanhas de lançamento serão realizadas até o lançamento do produto.</p>
+  </div>
+
+  <div class="plans-pets reveal">
+    <div class="pet-avatar"><img src="https://images.unsplash.com/photo-1517849845537-4d257902454a?w=300&q=80&auto=format&fit=crop" alt="Pug" onerror="imgFail(this)"><div class="img-fallback"><svg viewBox="0 0 24 24" fill="none"><path d="M12 21c-3.5 0-6-2-6-4.5 0-2 1.8-3.5 6-3.5s6 1.5 6 3.5C18 19 15.5 21 12 21Z" fill="#c4b5fd"/><circle cx="7" cy="9.5" r="2" fill="#fff"/><circle cx="17" cy="9.5" r="2" fill="#fff"/><circle cx="10" cy="6" r="2" fill="#a78bfa"/><circle cx="14" cy="6" r="2" fill="#a78bfa"/></svg></div></div>
+    <div class="pet-avatar"><img src="https://images.unsplash.com/photo-1574158622682-e40e69881006?w=300&q=80&auto=format&fit=crop" alt="Gato" onerror="imgFail(this)"><div class="img-fallback"><svg viewBox="0 0 24 24" fill="none"><path d="M12 21c-3.5 0-6-2-6-4.5 0-2 1.8-3.5 6-3.5s6 1.5 6 3.5C18 19 15.5 21 12 21Z" fill="#c4b5fd"/><circle cx="7" cy="9.5" r="2" fill="#fff"/><circle cx="17" cy="9.5" r="2" fill="#fff"/><circle cx="10" cy="6" r="2" fill="#a78bfa"/><circle cx="14" cy="6" r="2" fill="#a78bfa"/></svg></div></div>
+    <div class="pet-avatar"><img src="https://images.unsplash.com/photo-1548199973-03cce0bbc87b?w=300&q=80&auto=format&fit=crop" alt="Cachorros" onerror="imgFail(this)"><div class="img-fallback"><svg viewBox="0 0 24 24" fill="none"><path d="M12 21c-3.5 0-6-2-6-4.5 0-2 1.8-3.5 6-3.5s6 1.5 6 3.5C18 19 15.5 21 12 21Z" fill="#c4b5fd"/><circle cx="7" cy="9.5" r="2" fill="#fff"/><circle cx="17" cy="9.5" r="2" fill="#fff"/><circle cx="10" cy="6" r="2" fill="#a78bfa"/><circle cx="14" cy="6" r="2" fill="#a78bfa"/></svg></div></div>
+  </div>
+
+  <div class="plans-grid">
+    <!-- ESSENCIAL -->
+    <div class="glass plan reveal">
+      <div class="plan-name">Essencial</div>
+      <div class="price">R$ 3.000<span> até o lançamento do app</span></div>
+      <p class="tagline">Para começar a presença digital com o básico bem feito. Campanhas de lançamento realizadas até o lançamento do produto.</p>
+      <ul>
+        <li><svg width="17" height="17" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="#a78bfa" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Instagram com 1 post por semana</li>
+        <li><svg width="17" height="17" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="#a78bfa" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Tráfego pago somente no Meta Ads</li>
+        <li><svg width="17" height="17" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="#a78bfa" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>2 conteúdos de feed + 1 stories para anúncio</li>
+        <li class="no"><svg width="17" height="17" viewBox="0 0 24 24" fill="none"><path d="M6 6l12 12M18 6 6 18" stroke="rgba(255,255,255,.35)" stroke-width="2.2" stroke-linecap="round"/></svg>Não inclui Landing Page</li>
+      </ul>
+      <a href="#cta-final" class="plan-btn">Escolher Essencial</a>
+    </div>
+
+    <!-- COMPLETO (destaque) -->
+    <div class="glass plan featured reveal">
+      <span class="badge">★ Mais escolhido</span>
+      <div class="plan-name" style="color:#fff">Completo</div>
+      <div class="price">R$ 6.500<span> até o lançamento do app</span></div>
+      <p class="tagline" style="color:rgba(255,255,255,.8)">Operação completa para lançar o app com máxima força. Campanhas de lançamento realizadas até o lançamento do produto.</p>
+      <ul>
+        <li><svg width="17" height="17" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="#fff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Instagram com 3 posts por semana + 2 stories</li>
+        <li><svg width="17" height="17" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="#fff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Gestão de TikTok</li>
+        <li><svg width="17" height="17" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="#fff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Tráfego pago no Meta Ads e Google Ads</li>
+        <li><svg width="17" height="17" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="#fff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Landing Page inclusa</li>
+        <li><svg width="17" height="17" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="#fff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Criação de Google Meu Negócio</li>
+        <li><svg width="17" height="17" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="#fff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Relatórios semanais e mensais de desempenho</li>
+      </ul>
+      <a href="#cta-final" class="plan-btn">Quero o Completo</a>
+    </div>
+
+    <!-- CRESCIMENTO -->
+    <div class="glass plan reveal">
+      <div class="plan-name">Crescimento</div>
+      <div class="price">R$ 5.000<span> até o lançamento do app</span></div>
+      <p class="tagline">Para acelerar com mais conteúdo e dois canais de anúncio. Campanhas de lançamento realizadas até o lançamento do produto.</p>
+      <ul>
+        <li><svg width="17" height="17" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="#a78bfa" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Instagram com 2 posts por semana + 1 stories</li>
+        <li><svg width="17" height="17" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="#a78bfa" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Tráfego pago no Meta Ads e Google Ads</li>
+        <li><svg width="17" height="17" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="#a78bfa" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Criação de Google Meu Negócio</li>
+        <li><svg width="17" height="17" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="#a78bfa" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Criação de página profissional no Meta</li>
+      </ul>
+      <a href="#cta-final" class="plan-btn">Escolher Crescimento</a>
+    </div>
+  </div>
+
+  <div class="media-note reveal">
+    <strong>Observação:</strong> a verba de mídia dos anúncios <strong>não está inclusa</strong> nos valores dos planos e é paga diretamente pelo cliente às plataformas (Meta e Google).
+  </div>
+</section>
+
+<!-- ============ 4. POR QUE TRÁFEGO PAGO ============ -->
+<section id="trafego">
+  <div class="traffic">
+    <div class="traffic-copy reveal left">
+      <span class="kicker" style="font-size:.75rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--purple-400);display:block;margin-bottom:14px">Aceleração</span>
+      <h2>Por que investir em tráfego pago?</h2>
+      <p>Conteúdo orgânico constrói marca, mas leva tempo. Os anúncios no <span class="hl">Meta Ads</span> e no <span class="hl">Google Ads</span> aceleram os downloads do app desde a primeira semana.</p>
+      <p>Com segmentação precisa, sua campanha aparece exatamente para <span class="hl">tutores de cães e gatos</span> da sua região, no momento em que estão procurando serviços para seus pets.</p>
+      <p>E tudo é <span class="hl">mensurável</span>: você sabe quanto custou cada download, cada lead e cada resultado, sem achismo.</p>
+      <div class="traffic-img">
+        <img src="img/esquilo.jpeg" alt="Esquilo" onerror="imgFail(this)">
+        <div class="img-fallback"><svg viewBox="0 0 24 24" fill="none" width="70" height="70"><path d="M12 21c-3.5 0-6-2-6-4.5 0-2 1.8-3.5 6-3.5s6 1.5 6 3.5C18 19 15.5 21 12 21Z" fill="#c4b5fd"/><circle cx="7" cy="9.5" r="2" fill="#fff"/><circle cx="17" cy="9.5" r="2" fill="#fff"/><circle cx="10" cy="6" r="2" fill="#a78bfa"/><circle cx="14" cy="6" r="2" fill="#a78bfa"/></svg></div>
+      </div>
+    </div>
+    <div class="stats-grid">
+      <div class="glass stat-card reveal">
+        <div class="stat-num"><span data-count="70" data-suffix="%">0%</span></div>
+        <div class="stat-label">dos tutores pesquisam online antes de escolher um serviço veterinário</div>
+      </div>
+      <div class="glass stat-card reveal">
+        <div class="stat-num"><span data-count="3" data-suffix="x">0x</span></div>
+        <div class="stat-label">mais rápido para gerar os primeiros downloads em comparação ao orgânico puro</div>
+      </div>
+      <div class="glass stat-card reveal">
+        <div class="stat-num"><span data-count="100" data-suffix="%">0%</span></div>
+        <div class="stat-label">dos resultados mensuráveis: custo por download, leads e conversões em tempo real</div>
+      </div>
+      <div class="glass stat-card reveal">
+        <div class="stat-num"><span data-count="24" data-suffix="h">0h</span></div>
+        <div class="stat-label">por dia com sua marca ativa: os anúncios trabalham enquanto você descansa</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FAQ ============ -->
+<section id="faq">
+  <div class="sec-head reveal">
+    <span class="kicker">Dúvidas</span>
+    <h2>Perguntas frequentes</h2>
+  </div>
+  <div class="faq-list">
+    <div class="glass faq-item reveal">
+      <div class="faq-q">A verba dos anúncios está incluída no valor do plano?<span class="plus">+</span></div>
+      <div class="faq-a">Não. Os valores dos planos cobrem a gestão, estratégia e produção de conteúdo. A verba de mídia é paga diretamente pelo cliente às plataformas (Meta e Google), com total transparência sobre quanto está sendo investido e o retorno gerado.</div>
+    </div>
+    <div class="glass faq-item reveal">
+      <div class="faq-q">Em quanto tempo começo a ver resultados?<span class="plus">+</span></div>
+      <div class="faq-a">As campanhas de tráfego pago começam a gerar alcance e downloads já nas primeiras semanas. A construção de autoridade orgânica (Instagram, Google Meu Negócio) é progressiva e ganha força mês a mês.</div>
+    </div>
+    <div class="glass faq-item reveal">
+      <div class="faq-q">E se eu ainda não tiver identidade visual?<span class="plus">+</span></div>
+      <div class="faq-a">Todas as entregas seguem a identidade visual fornecida pelo cliente. Caso ela ainda não exista, podemos criar. Basta consultar o valor desse serviço adicional.</div>
+    </div>
+    <div class="glass faq-item reveal">
+      <div class="faq-q">Posso trocar de plano depois?<span class="plus">+</span></div>
+      <div class="faq-a">Sim. Os planos são flexíveis: é possível começar pelo Essencial e migrar para o Crescimento ou Completo conforme o app ganha tração e o investimento se paga.</div>
+    </div>
+    <div class="glass faq-item reveal">
+      <div class="faq-q">Como acompanho o desempenho do trabalho?<span class="plus">+</span></div>
+      <div class="faq-a">No Plano Completo, você recebe relatórios semanais e mensais com os principais indicadores: alcance, downloads, custo por resultado e evolução do perfil. Nos demais planos, alinhamos a frequência de reporte na contratação.</div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 5. CTA FINAL ============ -->
+<section id="cta-final" class="final-cta">
+  <div class="final-box reveal">
+    <h2>E aí, João! Está pronto para colocar<br>seu projeto em outro patamar? 🐾</h2>
+    <p>Fale comigo e vamos inovar nesse novo mercado.</p>
+    <a class="btn-whats" href="https://wa.me/5541989009040?text=Ol%C3%A1!%20Quero%20fechar%20a%20proposta%20de%20marketing%20digital%20para%20o%20app%20veterin%C3%A1rio." target="_blank" rel="noopener">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M12 2a10 10 0 0 0-8.6 15L2 22l5.2-1.4A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.1l-.3-.2-3.1.8.8-3-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.5.1-.2.2-.6.8-.8 1-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4 0-.5.2-.7l.4-.5c.1-.2.1-.3 0-.5l-.8-1.8c-.2-.5-.4-.4-.5-.4h-.5c-.2 0-.5.1-.7.3-.2.3-.9.9-.9 2.2s.9 2.5 1.1 2.7c.1.2 1.8 2.8 4.4 3.9.6.3 1.1.4 1.5.5.6.2 1.2.2 1.6.1.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.1-.2-.2-.4-.3Z" fill="#fff"/></svg>
+      Fechar proposta no WhatsApp
+    </a>
+  </div>
+</section>
+
+<footer>
+  Proposta comercial de marketing digital · App Veterinário · Valores válidos por 15 dias a partir do envio.
+</footer>
+
+<script>
+/* ===== Fallback de imagem ===== */
+function imgFail(img){
+  img.style.display='none';
+  var fb=img.parentElement.querySelector('.img-fallback');
+  if(fb)fb.style.display='flex';
+}
+
+/* ===== Nav scroll ===== */
+var nav=document.getElementById('nav');
+window.addEventListener('scroll',function(){
+  nav.classList.toggle('scrolled',window.scrollY>40);
+},{passive:true});
+
+/* ===== Reveal on scroll ===== */
+var revObs=new IntersectionObserver(function(entries){
+  entries.forEach(function(e){
+    if(e.isIntersecting){e.target.classList.add('visible');revObs.unobserve(e.target);}
+  });
+},{threshold:.12});
+document.querySelectorAll('.reveal').forEach(function(el){revObs.observe(el);});
+
+/* ===== Contadores animados ===== */
+function animateCount(el){
+  var target=+el.dataset.count, suffix=el.dataset.suffix||'';
+  var dur=1600, start=null;
+  function step(ts){
+    if(!start)start=ts;
+    var p=Math.min((ts-start)/dur,1);
+    var eased=1-Math.pow(1-p,3);
+    el.textContent=Math.round(target*eased)+suffix;
+    if(p<1)requestAnimationFrame(step);
+  }
+  requestAnimationFrame(step);
+}
+var cntObs=new IntersectionObserver(function(entries){
+  entries.forEach(function(e){
+    if(e.isIntersecting){animateCount(e.target);cntObs.unobserve(e.target);}
+  });
+},{threshold:.5});
+document.querySelectorAll('[data-count]').forEach(function(el){cntObs.observe(el);});
+
+/* ===== FAQ acordeão ===== */
+document.querySelectorAll('.faq-item').forEach(function(item){
+  item.querySelector('.faq-q').addEventListener('click',function(){
+    var wasOpen=item.classList.contains('open');
+    document.querySelectorAll('.faq-item.open').forEach(function(o){o.classList.remove('open');});
+    if(!wasOpen)item.classList.add('open');
+  });
+});
+
+/* ===== Partículas flutuantes ===== */
+(function(){
+  var canvas=document.getElementById('particles'),ctx=canvas.getContext('2d'),parts=[];
+  var reduced=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if(reduced)return;
+  function resize(){canvas.width=innerWidth;canvas.height=innerHeight;}
+  resize();window.addEventListener('resize',resize);
+  var N=innerWidth<700?22:48;
+  for(var i=0;i<N;i++){
+    parts.push({
+      x:Math.random()*innerWidth,y:Math.random()*innerHeight,
+      r:Math.random()*2.2+.6,
+      vx:(Math.random()-.5)*.25,vy:-(Math.random()*.35+.08),
+      a:Math.random()*.5+.15
+    });
+  }
+  function tick(){
+    ctx.clearRect(0,0,canvas.width,canvas.height);
+    parts.forEach(function(p){
+      p.x+=p.vx;p.y+=p.vy;
+      if(p.y<-10){p.y=canvas.height+10;p.x=Math.random()*canvas.width;}
+      if(p.x<-10)p.x=canvas.width+10;
+      if(p.x>canvas.width+10)p.x=-10;
+      ctx.beginPath();
+      ctx.arc(p.x,p.y,p.r,0,Math.PI*2);
+      ctx.fillStyle='rgba(196,181,253,'+p.a+')';
+      ctx.shadowBlur=8;ctx.shadowColor='rgba(139,92,246,.9)';
+      ctx.fill();
+    });
+    requestAnimationFrame(tick);
+  }
+  tick();
+})();
+</script>
+</body>
+</html>
